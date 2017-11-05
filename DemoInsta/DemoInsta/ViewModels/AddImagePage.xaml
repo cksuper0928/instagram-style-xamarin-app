@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoInsta.ViewModels.AddImagePage"
+             xmlns:Local="clr-namespace:DemoInsta;assembly=DemoInsta">
+    <ContentPage.Content>
+
+        <ScrollView>
+
+            <StackLayout>
+
+                <Grid HeightRequest="{x:Static Local:Measurements.ProportionalViewSize}" ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="0.8*"/>
+                        <ColumnDefinition Width="0.2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Column="0" Grid.Row="0" Source="searchpage.png" HorizontalOptions="Center" VerticalOptions="Center" Margin="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ReturnHome" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label Grid.Column="1" Grid.Row="0" Text="Add New Image" FontAttributes="Bold" FontSize="Large" FontFamily="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Grid>
+
+                <Image HeightRequest="{x:Static Local:Measurements.HalfScreenHeight}" x:Name="NewImg" Margin="0,10" />
+
+                <Entry x:Name="PostTitle" Text="Post Title" />
+
+                <Label Text="User"/>
+                <Picker x:Name="UserPicker" />
+
+                <Label Text="Location" />
+                <Picker x:Name="LocationPicker" />
+
+                <Button x:Name="SaveBtn" Text="Save" Clicked="Save"/>
+
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

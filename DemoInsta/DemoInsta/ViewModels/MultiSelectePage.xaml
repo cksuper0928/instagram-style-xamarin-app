@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoInsta.ViewModels.MultiSelectePage"
+             xmlns:Local="clr-namespace:DemoInsta;assembly=DemoInsta"
+             BackgroundColor="White">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0"/>
+    </ContentPage.Padding>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Local:ValueNameConverter x:Key="ValueNameConverter"></Local:ValueNameConverter>
+            <Local:BackgroundColourConverter x:Key="BackgroundColourConverter"></Local:BackgroundColourConverter>
+            <Local:TextColourConverter x:Key="TextColourConverter"></Local:TextColourConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label x:Name="TitleLbl" TextColor="#132d48" FontAttributes="Bold" FontSize="Large" FontFamily="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="{x:Static Local:Measurements.ProportionalViewSize}" />
+
+            <ListView x:Name="MutliSelectListView" HasUnevenRows="False" VerticalOptions="FillAndExpand" SeparatorVisibility="None" SelectedItem="CellSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="0,0,0,1" BackgroundColor="#DDDDDD">
+                                <Local:LeftIndentedLabel Text="{Binding Key, Converter={StaticResource ValueNameConverter}}" BackgroundColor="{Binding Value, Converter={StaticResource BackgroundColourConverter}}" TextColor="{Binding Value, Converter={StaticResource TextColourConverter}}" FontSize="16" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnLabelClicked"/>
+                                    </Label.GestureRecognizers>
+                                </Local:LeftIndentedLabel>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Clicked="SaveAndExit" Text="Done" Margin="10" BackgroundColor="White" BorderColor="#132d48" BorderRadius="1" BorderWidth="1"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

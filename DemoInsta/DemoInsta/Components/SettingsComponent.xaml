@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoInsta.Components.SettingsComponent"
+             xmlns:Components="clr-namespace:DemoInsta.Components;assembly=DemoInsta"
+             Padding="10"
+             BackgroundColor="White"
+             Spacing="10">
+    
+    <Label Text="Settings" FontSize="Large" FontAttributes="Bold" Margin="0,10"/>
+
+    <Components:SettingsSingleSelectComponent x:Name="DateElement" Title="Date"/>
+    <Components:SettingsMultiSelectComponent x:Name="LocationElement" Title="Locations"/>
+    <Components:SettingsMultiSelectComponent x:Name="UserElement" Title="Users"/>
+    <Button Text="Apply" Clicked="ApplyFilter" HorizontalOptions="EndAndExpand" BorderColor="Gray" BorderRadius="1" BorderWidth="1"/>
+
+</StackLayout>

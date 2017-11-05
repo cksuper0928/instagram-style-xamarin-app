@@ -1,0 +1,7 @@
+.DS_Store
+[Bb]in/
+[Oo]bj/
+[Ll]og/*
+packages/
+.vs/
+TestResults/

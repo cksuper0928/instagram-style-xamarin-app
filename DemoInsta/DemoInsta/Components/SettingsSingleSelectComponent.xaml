@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoInsta.Components.SettingsSingleSelectComponent"
+             Orientation="Horizontal">
+    <Label x:Name="TitleLbl" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+    <Picker x:Name="ThePicker" IsVisible="False" IsEnabled="False" Margin="0" HeightRequest="0" WidthRequest="0" Unfocused="ItemChanged"/>
+    <Label x:Name="SelectedLbl" VerticalOptions="Center" Margin="5"/>
+    <Button Text="Change" BorderColor="Gray" TextColor="Gray" BackgroundColor="White" BorderRadius="1" BorderWidth="1" Clicked="OpenPicker"/>
+</StackLayout>
