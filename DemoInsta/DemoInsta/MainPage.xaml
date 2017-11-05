@@ -62,7 +62,7 @@
 
                     <Components:EmptyListViewMessage x:Name="EmptyMessage" Grid.Column="0" Grid.Row="0"/>
 
-                    <ListView Grid.Column="0" Grid.Row="0" x:Name="PostList" HasUnevenRows="True" VerticalOptions="FillAndExpand" SeparatorVisibility="None" SelectedItem="CellSelected">
+                    <ListView Grid.Column="0" Grid.Row="0" x:Name="PostList" HasUnevenRows="True" VerticalOptions="FillAndExpand" SeparatorVisibility="None" SelectedItem="CellSelected" CachingStrategy="RecycleElement">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
